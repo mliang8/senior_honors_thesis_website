@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Elements</title>
+  </head>
+  <body>
+  
+<header>HTML Content Elements - Web Mapping 2015 - TU Vienna</header>
+
+<nav>
+<ul>
+<li><a href="#inline">Inline Elements</a></li>
+<li><a href="#block">Block-level Elements</a></li>
+<li><a href="#entities">Entities</a></li>
+</ul>
+</nav>
+
+<main>
+
+<h1>HTML Content Elements</h1>
+
+<section id="inline">
+<h2>Inline Elements</h2>
+
+<h3>Text markup</h3>
+
+<p>
+Within text flow, you can <em>emphasize</em>, <strong>strongly emphasize</strong>, mark <del>deletions</del>, use <sup>superscript</sup> or <sub>subscript</sub>. You can also mark <kbd>keyboard input</kbd>, <code>code snippets</code>, <small>small print</small>. Citing <cite>Sources</cite> or <q>inline quotes</q> are also supported.
+</p>
+<p>
+Abbreviations can be marked using the <abbr title="Abbreviation">abbr</abbr> element. You can highlight <b>keywords</b> or <i>special terms</i> and temporarily <mark>mark</mark> text passages.
+</p>
+
+<h3>Data markup</h3>
+
+<p>For machine processing, <time datetime="2015-03-01">temporal</time> or <data value="1,2,3">generic</data> data can be annotated.</p>
+</section>
+
+<section id="inline">
+<h2>Media Elements</h2>
+
+<h3>Images</h3>
+<img src="http://www.tuwien.ac.at/fileadmin/tuw/main/images/TU-Header09.gif"></img>
+
+</section>
+
+<section id="block">
+<h2>Block-level elements</h2>
+
+<h3>Headlines</h3>
+
+<h1>Headline 1</h1>
+<h2>Headline 2</h2>
+<h3>Headline 3</h3>
+<h4>Headline 4</h4>
+<h5>Headline 5</h5>
+<h6>Headline 6</h6>
+
+<h3>Text structure</h4>
+
+<p>Paragraph. A paragraph contains a paragraph of text. Inside the paragraph, only inline elements can be used, e.g. to <em>emphasize</em> words or sentences.</p>
+
+<p>Next paragraph. Like in any longer text, paragraphs are used to separate lines of thoughts. Paragraphs are usually rendered by separating them visually by a vertical margin.</p>
+
+<blockquote>
+A block quote can be used to quote a full sentence or paragraph from a different source. It is usually rendered with a left margin/indentation.
+</blockquote>
+
+<h3>Lists</h3>
+
+<h4>Unordered list</h4>
+<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</ul>
+
+<h4>Ordered list</h4>
+<ol>
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</ol>
+
+<h4>Definition list</h4>
+<dl>
+<dt>Term 1</dt><dd>Definition 1</dd>
+<dt>Term 2</dt><dd>Definition 2</dd>
+<dt>Term 3</dt><dd>Definition 3</dd>
+</dl>
+
+<p>All lists can be nested like so:</p>
+
+<ul>
+<li>Level 1
+  <ul>
+  <li>Level 2</li>
+  </ul>
+</li>
+</ul>
+
+
+<h3>Tables</h3>
+<table>
+<tr>
+    <th>Name</th><th>Population</th><th>Coordinates</th>
+</tr>
+<tr>
+    <td>Munich</td><td>1.429.584</td><td>48.13, 11.57</td>
+</tr>
+<tr>
+    <td>Vienna</td><td>1.840.573</td><td>48.20, 16.37</td>
+</tr>
+<tr>
+    <td>Dresden</td><td>536.308</td><td>51.04, 13.73</td>
+</tr>
+</table>
+
+
+
+<h3>Document Structure</h3>
+
+See the source code of this page for elements used to structure the document:
+<ul>
+<li><code>&lt;main&gt;</code> Main content.</li>
+<li><code>&lt;section&gt;</code> A section of the document.</li>
+<li><code>&lt;article&gt;</code> An article (e.g. in a blog containing multiple articles).</li>
+<li><code>&lt;nav&gt;</code> Navigation.</li>
+<li><code>&lt;header&gt;</code></li>
+<li><code>&lt;footer&gt;</code></li>
+</ul>
+
+<aside>Side Note.</aside>
+
+<figure>
+<img src="http://www.tuwien.ac.at/fileadmin/tuw/main/images/TU-Header09.gif"></img>
+<figcaption>Figure 1: TU Header</figcaption>
+</figure>
+
+<div>Generic Block</div>
+
+<h3>Special</h3>
+
+<pre>Preformatted Text
+Often used for source code, program output.
+Will preserve linebreaks!
+</pre>
+</section>
+
+
+<!-- TO DO:
+<h2>Forms</h2>
+-->
+
+<section id="entities">
+<h2>Entities</h2>
+<ul>
+<li>&amp;lt; - &lt;</li>
+<li>&amp;gt; - &gt;</li>
+<li>&amp;amp; - &amp;</li>
+<li>&amp;copy; - &copy;</li>
+<li>&hellip;</li>
+</ul>
+<aside>Other entities are not used as frequently any more because of unicode support in browsers & editors&hellip;</aside>
+</section>
+
+</main>
+
+<footer>HTML Content Elements - Web Mapping 2015 - TU Vienna</footer>
+
+  </body>
+</html>

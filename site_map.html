@@ -1,0 +1,209 @@
+<!--
+This page is intended to demonstarte the study areas and the sample point locaation which has been elaborated in my 
+thesis using two maps. 
+- The static map is used to provide an overview of the size of Minnesota, and the genera location 
+of the study area. 
+- The interactive map created using leaflet api is used to allow users to understand more precisely the boundery of the 
+stduy area in which I performed the random sampling. The selection of basemap is intentional, because this is the one of the
+few that could show the border lines in county level, and the infromation on the borders of the counties is very critical for my study.
+This basemap also presents the natural featurs(vegetation, water bodies) in details, which allows users to experience the landscape 
+as they interact with the map.
+- ** The polygon i created for the interactive map is quite detailed. The vertices are coordiantes I traced from Google Earth of the 
+actual sampling region.
+  **To grand users with more freedom when interact, I adopt the layer control concepts which allows the user to toggle on and off the 
+markers and the polygon that I created. 
+-->
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Euro-American Settlment, Vegetation and Soil</title>
+    <link rel="shortcut icon" href="assets/mn.png">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="http://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+	<script src="http://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+  </head>
+  <body>
+
+		<h5 class="notation"> A Senior Honors Thesis at the Department of Geography at University of Wisconsin - Madison</h5>
+		<h1>Interaction of Human Settlement, Vegetation Patterns and Soils in the Northern Minnesota Prairie-Forest Region from the Euro-American Settlement Era to Present</h1>
+		<h3>Mengyu Liang, supervised by Dr. Joseph Mason at UW-Madison Geography Department</h3>
+		
+
+		<div class="container"> <!-- Links to include in navbar -->
+		      <ul class="navbar">  <!-- Unordered list for links on navbar -->
+		        <li><a href="index.html">ABSTRACT</a></li>
+				<li><a href="intro.html">INTRODUCTION</a></li>
+				<li><a href="site_map.html">SITE MAPS</a></li>
+				<li><a href="lit_review.html">LITERATURE REVIEW</a></li>
+		        <li><a href="methods.html">METHODS</a></li>
+		        <li><a href="disc_concld.html">DISCUSSION & CONCLUSION</a></li>
+		        <li><a href="acknowledgement.html">ACKNOWLEDGEMENT</a></li>
+		        <li><a href="reference.html">REFERENCE</a></li>
+		        <li><a href="diarylog.html">PROJECT DIARY</a></li>
+		      </ul>
+		</div>
+		<hr />
+
+		<div class="content">
+			<h2><span>&#167;</span> Site Maps</h2>
+
+		</div>
+
+
+		<div class="maps">
+			<div class="map">
+			    <div class="marker" id="marker1">
+			    	<!-- 47.3812° N, 95.7975° W -->
+			    </div>
+			    <div class="marker" id="marker2" >
+			    	<!-- 47.7201° N, 95.3106° W -->
+			    </div>
+			    <div class="marker" id="marker3">
+			    	<!-- 47.77 -96.4 W -->
+			    </div>
+			    <div class="rectangle">
+			    </div>
+
+			    <div id="caption">
+				<small>Map image &copy; USDA PublicDomain</small>
+				</div>
+
+			</div>
+			
+
+			<div class="map2"id="map2">
+			</div>
+			
+
+
+		</div>
+
+		
+		
+		<img class="footwrap" src="assets/farming2.jpg" alt="Farming">
+
+		<script>
+			var map2 = L.map('map2',{
+
+				maxZoom:12
+			});
+			map2.setView([47.5216, -95.6983],9);
+
+			var baselayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+				attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ, TomTom, Intermap, iPC, USGS, FAO, NPS, NRCAN, GeoBase, Kadaster NL, Ordnance Survey, Esri Japan, METI, Esri China (Hong Kong), and the GIS User Community'
+			}).addTo(map2);
+
+
+			// L.control.layers(baselayer).addTo(map2);
+
+
+			var icon = L.icon({
+				iconUrl: 'assets/magni.png',
+				iconSize: [23, 21],
+				iconAnchor: [10, 15]
+				});
+			//var popupAnchor=[5,5];
+			var pos1 = [47.50861,-95.53528];
+			var marker1 = L.marker(pos1, {
+				icon: icon
+			});
+			marker1.addTo(map2).bindPopup("<b>Point 1</b><br>Forest<br>T147R38S31").openPopup();
+
+			
+			//var popupAnchor=[5,5];
+			var pos2 = [47.19167,-95.87333];
+			var marker2 = L.marker(pos2, {
+				icon: icon
+			});
+			marker2.addTo(map2).bindPopup("<b>Point 2</b><br>Savanna<br>T143R41S21");
+
+			//var popupAnchor=[5,5];
+			var pos3 = [47.43556,-95.90611];
+			var marker3 = L.marker(pos3, {
+				icon: icon
+			});
+			marker3.addTo(map2).bindPopup("<b>Point 3</b><br>Prairie<br>T146R41S29");
+
+
+			//var popupAnchor=[5,5];
+			var pos4 = [47.67333,-95.49722];
+			var marker4 = L.marker(pos4, {
+				icon: icon
+			});
+			marker4.addTo(map2).bindPopup("<b>Point 4</b><br>Savanna<br>T149R38S22");
+
+			//var popupAnchor=[5,5];
+			var pos5 = [47.36472,-95.61944];
+			var marker5 = L.marker(pos5, {
+				icon: icon
+			});
+			marker5.addTo(map2).bindPopup("<b>Point 5</b><br>Forest<br>T148R38S28");
+
+			
+			//var popupAnchor=[5,5];
+			var pos6 = [47.59917,-95.49139];
+			var marker6 = L.marker(pos6, {
+				icon: icon
+			});
+			marker6.addTo(map2).bindPopup("<b>Point 6</b><br>Forest<br>T148R38S28");
+
+			//var popupAnchor=[5,5];
+			var pos7 = [47.72556,-95.78806];
+			var marker7 = L.marker(pos7, {
+				icon: icon
+			});
+			marker7.addTo(map2).bindPopup("<b>Point 7</b><br>Savanna<br>T149R40S16");
+
+			
+			//var popupAnchor=[5,5];
+			var pos8 = [47.34083,-95.75028];
+			var marker8 = L.marker(pos8, {
+				icon: icon
+			});
+			marker8.addTo(map2).bindPopup("<b>Point 8</b><br>Savanna<br>T145R40S28");
+
+			//var popupAnchor=[5,5];
+			var pos9 = [47.55417,-95.90917];
+			var marker9 = L.marker(pos9, {
+				icon: icon
+			});
+			marker9.addTo(map2).bindPopup("<b>Point 9</b><br>Prairie<br>T147R41S17");
+
+			//var popupAnchor=[5,5];
+			var pos10 = [47.75083,-95.57556];
+			var marker10 = L.marker(pos10, {
+				icon: icon
+			});
+			marker10.addTo(map2).bindPopup("<b>Point 10</b><br>Prairie<br>T147R41S17");
+
+			var sites=L.layerGroup([marker10,marker9,marker8,marker7,marker6,marker5,marker4,marker3,marker2,marker1]);
+
+
+			var latlngs = [[47.15111,-96.06611],[47.49944,-96.06778],[47.75889,-96.05861],[47.75932,-95.83639],[47.84694,-95.83528],[47.84944,-95.70889],[47.93417,-95.70917],[47.93306,-95.60],[47.76722,-95.30639],[47.39639,-95.31111],[47.14806,-95.55056]]; //coordinates for the polygon
+			var polygon = L.polygon(latlngs, {
+				color: '#ff0101',
+				fillColor:"#f4d7d7",
+				fillOpacity:0.4,
+				weight:0.9
+			}).addTo(map2).bindPopup("<b>Sampling Area</b>");
+			// zoom the map to the polygon
+			map2.fitBounds(polygon.getBounds());
+
+			var baseMaps={
+				// "basemap":baselayer
+			};
+			var overlays={
+				"Area":polygon,
+				"Sites":sites			
+			}
+			L.control.layers(baseMaps,overlays).addTo(map2);
+
+		</script>
+
+		
+
+  </body>
+</html>
